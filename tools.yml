@@ -1,0 +1,4 @@
+- name: Prometheus tool
+  hosts: all
+  roles:
+    - "{{ tool_name }}"
