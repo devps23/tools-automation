@@ -2,10 +2,9 @@
 Description = Prometheus Service
 
 [Service]
-User=expense
-Environment=DB_HOST="mysql-{{ env }}.pdevops72.online"
-ExecStart=/bin/node /app/index.js
-SyslogIdentifier=backend
+User=bin
+ExecStart=/opt/prometheus-{{ version }}.linux-amd64/prometheus
+SyslogIdentifier=prometheus
 
 [Install]
 WantedBy=multi-user.target
