@@ -1,5 +1,4 @@
 - name: Download Prometheus
   ansible.builtin.get_url:
-    url: https://github.com/prometheus/prometheus/releases/download/v{{ version }}/prometheus-{{ version }}.linux-amd64.tar.gz
-    dest: /temp
-
+    url: https://github.com/prometheus/prometheus/releases/download/v2.51.2/prometheus-2.51.2.linux-amd64.tar.gz
+    dest: /opt
