@@ -22,3 +22,19 @@ resource "aws_iam_instance_profile" "instance_profile" {
   name = "${var.tool_name}-instance"
   role = aws_iam_role.instance.name
 }
+resource "aws_iam_policy" "policy" {
+  name        = "${var.tool_name}-policy"
+   description = "My test policy"
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          var.iam_policy_list,
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+      },
+    ]
+  })
+}
