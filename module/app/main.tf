@@ -13,7 +13,11 @@ resource "aws_route53_record" "records" {
   ttl = 30
 }
 resource "aws_iam_role" "instance" {
-  name               = "instance_role"
+  name               = "${var.tool_name}-role"
   assume_role_policy = data.aws_iam_policy_document.instance_assume_role_policy.json
 }
 
+resource "aws_iam_instance_profile" "instance_profile" {
+  name = "${var.tool_name}-instance"
+  role = aws_iam_role.instance.name
+}
