@@ -2,6 +2,7 @@ resource "aws_instance" "resource" {
   ami = var.aws_ami
   instance_type = var.instance_type
   iam_instance_profile = aws_iam_instance_profile.instance_profile.name
+
   tags = {
     Name = var.tool_name
   }
@@ -13,14 +14,14 @@ resource "aws_route53_record" "records" {
   records = [aws_instance.resource.private_ip]
   ttl = 30
 }
-resource "aws_iam_role" "instance" {
+resource "aws_iam_role" "role" {
   name               = "${var.tool_name}-role"
   assume_role_policy = data.aws_iam_policy_document.instance_assume_role_policy.json
 }
 
 resource "aws_iam_instance_profile" "instance_profile" {
   name = "${var.tool_name}-instance"
-  role = aws_iam_role.instance.name
+  role = aws_iam_role.role.name
 }
 resource "aws_iam_policy" "policy" {
   name        = "${var.tool_name}-policy"
@@ -37,4 +38,8 @@ resource "aws_iam_policy" "policy" {
       },
     ]
   })
+}
+resource "aws_iam_role_policy_attachment" "policy-attach" {
+  role       = aws_iam_role.role.name
+  policy_arn = aws_iam_policy.policy.arn
 }
