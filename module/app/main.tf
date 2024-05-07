@@ -10,6 +10,7 @@ resource "aws_route53_record" "records" {
   type = "A"
   zone_id = var.zone_id
   records = [aws_instance.resource.private_ip]
+  ttl = 30
 }
 resource "aws_iam_role" "instance" {
   name               = "instance_role"
