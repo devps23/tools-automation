@@ -1,4 +1,4 @@
-module "prometheus" {
+module "tools" {
   for_each = var.tools
   source = "./module/app"
   tool_name = each.key
