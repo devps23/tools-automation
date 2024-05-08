@@ -31,7 +31,7 @@ resource "aws_iam_policy" "policy" {
     Statement = [
       {
         Action = [
-          policy_request_list,
+          var.iam_policy_list,
         ]
         Effect   = "Allow"
         Resource = "*"
