@@ -9,9 +9,9 @@ scrape_configs:
     static_configs:
       - targets: ["localhost:9090"]
 
-  - job_name: "nodeexporter"
+ - job_name: "nodeexporter"
      static_configs:
-       - targets: ["{{component}}-{{env}}.pdevops72.online:9100"]
+       - targets: ["172.31.17.251:9090"]
 
   - job_name: "ec2-filter"
     ec2_sd_configs:
