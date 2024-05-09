@@ -1,0 +1,24 @@
+Grafana:
+=======
+* there is no link directory to install grafana package.
+* so for this to add grafana.repo file.
+* Install grafana dnf package.
+* start service
+* grafana port:3000
+* once dashboard opens:
+click on datasource----->insert name---->
+In prometheus server url: http://prometheus-role.pdevops72.online----> save and test
+Search grafana node exporter dashboards--->search dashboards----> Node_exporter full(search)
+enter id:1860
+Add visualization:
+name:Node Exporter Full
+Folder:Dashboards
+prometheus:prometheus
+Dashboards right side: builder,code
+click on code link
+In metrics browser----> click up query----> Run queries
+In value Mappings----> value: 1 Display Text: up-----> click on update button
+add another mapping----> value:0 Display Text: Down---->click on update button
+Save Dashboard name
+In options:Legend---->{{name}}
+four signals of golden rules:(search)
