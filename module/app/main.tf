@@ -6,6 +6,13 @@ resource "aws_instance" "resource" {
   tags = {
     Name = var.tool_name
   }
+  instance_market_options {
+    market_type = "spot"
+    spot_options {
+      instance_interruption_behavior = "stop"
+      spot_instance_type             = "persistent"
+    }
+  }
 }
 resource "aws_route53_record" "records" {
   name = "${var.tool_name}-role"
