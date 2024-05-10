@@ -37,7 +37,7 @@ resource "aws_iam_policy" "policy" {
     Version = "2012-10-17"
     Statement = [
       {
-        Action = concat("DescribeInstanceTypes",var.policy_request_list)
+        Action = concat(var.describe_instance_type,var.policy_request_list)
 
         Effect   = "Allow"
         Resource = "*"
