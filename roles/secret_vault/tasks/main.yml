@@ -1,5 +1,5 @@
 - name: Add vault repo file
-  ansible.builtin.shell: --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+  ansible.builtin.shell: https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
 
 - name: Install vault
   ansible.builtin.yum:
