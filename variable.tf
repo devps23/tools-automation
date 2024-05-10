@@ -6,8 +6,11 @@ variable "tools"{
     }
     grafana = {
       instance_type="t3.micro"
-      policy_request_list = "ec2:DescribeInstances"
     }
+    vault = {
+      instance_type="t3.micro"
+    }
+
   }
 
 }
