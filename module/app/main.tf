@@ -37,9 +37,8 @@ resource "aws_iam_policy" "policy" {
     Version = "2012-10-17"
     Statement = [
       {
-        Action = [
-          var.policy_request_list,
-        ]
+        Action = var.policy_request_list,
+
         Effect   = "Allow"
         Resource = "*"
       },
