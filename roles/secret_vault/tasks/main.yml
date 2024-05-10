@@ -1,0 +1,13 @@
+- name: Add vault repo file
+  ansible.builtin.shell: --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+
+- name: Install vault
+  ansible.builtin.yum:
+    name: vault
+    state: installed
+
+- name: Start vault service
+  ansible.builtin.systemd_service:
+    name: vault
+    state: restarted
+    enabled: yes
