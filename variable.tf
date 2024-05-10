@@ -6,9 +6,11 @@ variable "tools"{
     }
     grafana = {
       instance_type="t3.micro"
+      policy_request_list = []
     }
     vault = {
       instance_type="t3.micro"
+      policy_request_list = []
     }
 
   }
