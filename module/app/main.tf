@@ -38,7 +38,7 @@ resource "aws_iam_policy" "policy" {
     Statement = [
       {
         Action = [
-          var.iam_policy_list,
+          "ec2:DescribeInstances",
         ]
         Effect   = "Allow"
         Resource = "*"
