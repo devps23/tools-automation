@@ -15,3 +15,7 @@
   ansible.builtin.debug:
     msg: "{{ lookup('hashi_vault', 'secret=expense/data/demo token=hvs.tyEMRhd9Ms8lvUUU1ML0kYtp
      url=https://54.242.186.30:8200')}}"
+
+- name: Install hvac package
+  ansible.builtin.pip:
+    name: hvac
