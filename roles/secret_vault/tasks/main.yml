@@ -16,8 +16,7 @@
 - name: Install hvac package
   ansible.builtin.pip:
     name: hvac
-    state: installed
-    executable: pip3.11
+    executable: pip
 
 - name: get vault credentials
   ansible.builtin.debug:
