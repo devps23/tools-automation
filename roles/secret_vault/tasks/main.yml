@@ -21,7 +21,7 @@
 - name: get vault credentials
   ansible.builtin.debug:
     msg: "{{ lookup('hashi_vault', 'secret=expense/data/demo token=hvs.tyEMRhd9Ms8lvUUU1ML0kYtp
-     url=https://54.242.186.30:8200 validate_certs=true')}}"
+     url=https://54.242.186.30:8200 validate_certs=false')}}"
 
 - name: Install hvac package
   ansible.builtin.pip:
