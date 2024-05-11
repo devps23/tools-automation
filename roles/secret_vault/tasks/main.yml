@@ -13,10 +13,10 @@
     state: restarted
     enabled: yes
 
-#- name: Install hvac package
-#  ansible.builtin.pip:
-#    name: hvac
-#    state: installed
+- name: Install hvac package
+  ansible.builtin.pip:
+    name: hvac
+    executable: pip3.11
 
 - name: get vault credentials
   ansible.builtin.debug:
