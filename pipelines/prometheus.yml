@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  tools-prometheus-tf:
+  terraform-tf:
     group: expense
     label_template: ${COUNT}
     lock_behavior: none
