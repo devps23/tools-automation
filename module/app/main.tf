@@ -21,6 +21,13 @@ resource "aws_route53_record" "records" {
   records = [aws_instance.resource.private_ip]
   ttl = 30
 }
+resource "aws_route53_record" "records_internal" {
+  name = "${var.tool_name}-internal"
+  type = "A"
+  zone_id = var.zone_id
+  records = [aws_instance.resource.public_ip]
+  ttl = 30
+}
 resource "aws_iam_role" "role" {
   name               = "${var.tool_name}-role"
   assume_role_policy = data.aws_iam_policy_document.instance_assume_role_policy.json
