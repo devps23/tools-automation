@@ -14,14 +14,14 @@ resource "aws_instance" "resource" {
     }
   }
 }
-resource "aws_route53_record" "records" {
+resource "aws_route53_record" "record" {
   name = "${var.tool_name}-role"
   type = "A"
   zone_id = var.zone_id
   records = [aws_instance.resource.private_ip]
   ttl = 30
 }
-resource "aws_route53_record" "records_internal" {
+resource "aws_route53_record" "record_internal" {
   name = "${var.tool_name}-internal"
   type = "A"
   zone_id = var.zone_id
