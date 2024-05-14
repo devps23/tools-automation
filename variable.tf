@@ -1,13 +1,13 @@
 variable "tools"{
   default = {
-    prometheus = {
-      instance_type="t3.micro"
-      policy_request_list = ["ec2:DescribeInstances"]
-    }
-    grafana = {
-      instance_type="t3.micro"
-      policy_request_list = []
-    }
+//    prometheus = {
+//      instance_type="t3.micro"
+//      policy_request_list = ["ec2:DescribeInstances"]
+//    }
+//    grafana = {
+//      instance_type="t3.micro"
+//      policy_request_list = []
+//    }
     vault = {
       instance_type="t3.micro"
       policy_request_list = []
