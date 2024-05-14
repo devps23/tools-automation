@@ -2,10 +2,6 @@ resource "aws_instance" "resource" {
   ami = var.aws_ami
   instance_type = var.instance_type
   iam_instance_profile = aws_iam_instance_profile.instance_profile.name
-
-  tags = {
-    Name = var.tool_name
-  }
   instance_market_options {
     market_type = "spot"
     spot_options {
@@ -13,16 +9,20 @@ resource "aws_instance" "resource" {
       spot_instance_type             = "persistent"
     }
   }
+  tags = {
+    Name = var.tool_name
+  }
+
 }
-resource "aws_route53_record" "record" {
-  name = "${var.tool_name}-role"
+resource "aws_route53_record" "record_internal" {
+  name = "${var.tool_name}-internal"
   type = "A"
   zone_id = var.zone_id
   records = [aws_instance.resource.private_ip]
   ttl = 30
 }
-resource "aws_route53_record" "record_internal" {
-  name = "${var.tool_name}-internal"
+resource "aws_route53_record" "record" {
+  name = "${var.tool_name}-role"
   type = "A"
   zone_id = var.zone_id
   records = [aws_instance.resource.public_ip]
