@@ -22,3 +22,30 @@ add another mapping----> value:0 Display Text: Down---->click on update button
 Save Dashboard name
 In options:Legend---->{{name}}
 four signals of golden rules:(search)
+
+start service
+restart service in linux
+check status : systemctl status node_exporter
+systemctl restart node_exporter
+
+****************************************************
+New relic : to do application monitoring like nginx,nodejs
+nginx is installed in frontend so use frontend hosts and connect with new relic nginx and check graph
+nodejs is installed in backend so use backend hosts and connect with new relic nodejs and visualize graph
+key:
+====
+NRAK-M257XKZ5E42HEN4AGZ0H14QMETO
+Install NGINX integration:
+=============================
+curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh | bash && sudo NEW_RELIC_API_KEY=NRAK-M257XKZ5E42HEN4AGZ0H14QMETO NEW_RELIC_ACCOUNT_ID=4432802 NEW_RELIC_REGION=US /usr/local/bin/newrelic install -n nginx-open-source-integration
+
+
+Install nodejs integration:
+===========================
+1.make a directory /app
+2.Install new relic in backend node
+3.ls node_modules---->get new relic
+NEW_RELIC_APP_NAME=backend
+NEW_RELIC_LICENSE_KEY=NRAK-M257XKZ5E42HEN4AGZ0H14QMETO
+/bin/node -r newrelic/app/index.js
+
