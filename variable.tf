@@ -8,10 +8,10 @@ variable "tools"{
 //      instance_type="t3.micro"
 //      policy_request_list = []
 //    }
-//    vault = {
-//      instance_type="t3.micro"
-//      policy_request_list = []
-//    }
+    vault = {
+      instance_type="t3.micro"
+      policy_request_list = []
+    }
 //    elk-search = {
 //      instance_type="t3.large"
 //      policy_request_list = []
