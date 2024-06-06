@@ -1,5 +1,5 @@
 resource "aws_instance" "resource" {
-  ami = data.aws_ami.ami.id
+  ami = data.aws_ami.ami.image_id
   instance_type = var.instance_type
   iam_instance_profile = aws_iam_instance_profile.instance_profile.name
   instance_market_options {
