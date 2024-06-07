@@ -2,11 +2,15 @@
   ansible.builtin.user:
     name: sonar
 
-- name: Download and unarchive sonarqube
+- name: Download sonarqube
+  ansible.builtin.get_url:
+    url: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
+    dest: /opt/sonar
+
+- name: unarchive sonarqube
   ansible.builtin.unarchive:
-    src: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
+    src: /opt/sonar
     dest: /home/sonar
     owner: sonar
     group: sonar
     remote_src: yes
-
