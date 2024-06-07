@@ -17,7 +17,7 @@ variable "tools"{
 //      policy_request_list = []
 //    }
     sonarqube_cl = {
-      instance_type="t3.micro"
+      instance_type="t3.medium"
       policy_request_list = []
     }
   }
