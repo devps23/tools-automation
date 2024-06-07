@@ -10,7 +10,7 @@
 - name: unarchive sonarqube
   ansible.builtin.unarchive:
     src: /opt/sonar
-    dest: /home/sonar
+    dest: /sonar
     owner: sonar
     group: sonar
     remote_src: yes
