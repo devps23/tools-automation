@@ -11,8 +11,7 @@
   ansible.builtin.file:
     path: /home/ec2-user/sonarqube
     state: directory
-    owner: sonar
-    group: sonar
+  become_user: sonar
 
 - name: unarchive sonarqube
   ansible.builtin.unarchive:
