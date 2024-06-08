@@ -9,7 +9,7 @@
 
 - name: make a directory
   ansible.builtin.file:
-    path: /home/ec2-user/sonarqube
+    path: /opt/sonarqube
     state: directory
     owner: sonar
     group: sonar
@@ -18,7 +18,7 @@
 - name: unarchive sonarqube
   ansible.builtin.unarchive:
     src: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
-    dest: /home/ec2-user/sonarqube
+    dest: /opt/sonarqube
     remote_src: yes
   become_user: sonar
 
