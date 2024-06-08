@@ -1,0 +1,11 @@
+[Unit]
+Description = Sonarqube Service
+
+[Service]
+User=bin
+WorkingDirectory=/opt/prometheus-{{ version }}.linux-amd64
+ExecStart=/opt/prometheus-{{ version }}.linux-amd64/prometheus
+SyslogIdentifier=sonarqube
+
+[Install]
+WantedBy=multi-user.target
