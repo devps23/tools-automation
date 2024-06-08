@@ -10,6 +10,8 @@
   ansible.builtin.file:
     path: /opt/sonarqube
     state: directory
+    owner: sonar
+    group: sonar
 
 - name: unarchive sonarqube
   ansible.builtin.unarchive:
