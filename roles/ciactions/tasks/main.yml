@@ -1,10 +1,10 @@
 - name: make a directory
   ansible.builtin.file:
-    path: /tmp/actions
+    path: /opt/actions
     state: directory
 
 - name: make another directory
   ansible.builtin.file:
-    path: /tmp/actions1
+    path: /opt/actions1
     state: directory
   become_user: ec2-user
