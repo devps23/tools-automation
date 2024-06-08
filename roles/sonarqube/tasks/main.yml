@@ -2,27 +2,15 @@
   ansible.builtin.user:
     name: sonar
 
-- name: Download sonarqube
-  ansible.builtin.get_url:
-    url: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
-    dest: /opt/sonar
+- name: make a directory
+  ansible.builtin.file:
+    path: /opt/sonarqube
+    state: directory
 
 - name: unarchive sonarqube
   ansible.builtin.unarchive:
-    src: /opt/sonar
-    dest: /home/sonar
-    owner: sonar
-    group: sonar
+    src: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
+    dest: /opt/sonarqube
     remote_src: yes
 
-- name: copy sonarqube template
-  ansible.builtin.template:
-    src: sonarqube.service
-    dest: /etc/systemd/system
 
-- name: start service
-  ansible.builtin.systemd_service:
-    name: sonarqube
-    state: restarted
-    enabled: true
-    daemon_reload: true
