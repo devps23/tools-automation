@@ -6,5 +6,5 @@
 - name: make another directory
   ansible.builtin.file:
     path: /opt/act
-    state: directory
+    state: touch
   become_user: ec2-user
