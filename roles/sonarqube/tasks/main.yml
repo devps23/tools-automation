@@ -17,8 +17,8 @@
   ansible.builtin.unarchive:
     src: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
     dest: /opt/sonarqube
-    become_user: sonar
     remote_src: true
+  become_user: sonar
 
 - name: copy sonarqube service
   ansible.builtin.template:
