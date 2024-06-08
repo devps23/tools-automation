@@ -1,6 +1,10 @@
 - name: add sonarqube user
   ansible.builtin.user:
     name: sonar
+- name: Install java
+  ansible.builtin.dnf:
+    name: java-17-openjdk
+    state: installed
 
 - name: make a directory
   ansible.builtin.file:
