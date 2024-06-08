@@ -3,8 +3,8 @@ Description = Sonarqube Service
 
 [Service]
 User=bin
-WorkingDirectory=/opt/prometheus-{{ version }}.linux-amd64
-ExecStart=/opt/prometheus-{{ version }}.linux-amd64/prometheus
+WorkingDirectory=/opt/sonarqube/sonarqube-10.5.1.90531/bin/linux-x86-64
+ExecStart=/opt/sonarqube/sonarqube-10.5.1.90531/bin/linux-x86-64/sonarqube
 SyslogIdentifier=sonarqube
 
 [Install]
