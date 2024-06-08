@@ -11,13 +11,15 @@
   ansible.builtin.file:
     path: /home/ec2-user/sonarqube
     state: directory
+    owner: sonar
+    group: sonar
 
 
-- name: unarchive sonarqube
-  ansible.builtin.unarchive:
-    src: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
-    dest: /home/ec2-user/sonarqube
-    remote_src: yes
+#- name: unarchive sonarqube
+#  ansible.builtin.unarchive:
+#    src: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
+#    dest: /home/ec2-user/sonarqube
+#    remote_src: yes
 
 
 
