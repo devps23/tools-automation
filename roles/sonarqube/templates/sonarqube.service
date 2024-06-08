@@ -1,0 +1,12 @@
+[Unit]
+Description = Sonarqube Service
+
+[Service]
+User=bin
+WorkingDirectory=/opt/sonarqube/sonarqube-10.5.1.90531/bin/linux-x86-64
+ExecStart=/opt/sonarqube/sonarqube-10.5.1.90531/bin/linux-x86-64/sonar.sh start
+SyslogIdentifier=sonarqube
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
