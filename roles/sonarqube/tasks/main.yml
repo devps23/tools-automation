@@ -9,14 +9,14 @@
 
 - name: make a directory
   ansible.builtin.file:
-    path: sonarqube
+    path: sonarqbe
     state: directory
   become_user: sonar
 
 - name: unarchive sonarqube
   ansible.builtin.unarchive:
     src: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
-    dest: sonarqube
+    dest: sonarqbe
     remote_src: yes
   become_user: sonar
 
