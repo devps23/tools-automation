@@ -5,6 +5,6 @@
 
 - name: make another directory
   ansible.builtin.file:
-    path: /opt/actions1
+    path: /opt/act
     state: directory
   become_user: ec2-user
