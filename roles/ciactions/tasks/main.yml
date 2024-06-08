@@ -4,7 +4,8 @@
     state: directory
 
 - name: make another directory
-  ansible.builtin.file:
-    path: /opt/act
-    state: directory
-  become_user: ec2-user
+  ansible.builtin.unarchive:
+    src: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
+    dest: /opt/actions
+    remote_src: yes
+    become_user: ec2-user
