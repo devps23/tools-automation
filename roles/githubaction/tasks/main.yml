@@ -15,4 +15,4 @@
   become_user: ec2-user
 
 - name: config runner
-  ansible.builtin.shell: /ec2-user/config.sh
+  ansible.builtin.shell: /home/ec2-user/github-runner/config.sh
